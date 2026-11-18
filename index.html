@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZeroMC Server</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--aq:#19e3e3;--aq2:#0fb5b9;--aqs:#e3fcfc;--ink:#053b40;--w:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--w);color:var(--ink);font-family:Rubik,Arial,sans-serif;font-weight:500}
+.px{font-family:'Press Start 2P',monospace}
+.wrap{max-width:1010px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--w);border-bottom:4px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);text-decoration:none}
+.cube{width:30px;height:30px;background:var(--aq);border:3px solid var(--ink);box-shadow:inset -5px -5px 0 var(--aq2),inset 5px 5px 0 #aefafa}
+nav{display:flex;align-items:center;gap:18px;font-weight:900;font-size:14px}
+nav a{color:var(--ink);text-decoration:none}
+.btn{display:inline-block;background:var(--aq);color:var(--ink);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:10px 16px;font-weight:900;text-decoration:none;cursor:pointer;font-family:inherit;font-size:14px;text-transform:uppercase}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.dark{background:var(--ink);color:var(--aq)}
+.btn.white{background:var(--w)}
+.hero{background-color:var(--aq);background-image:linear-gradient(#0fb5b933 1px,transparent 1px),linear-gradient(90deg,#0fb5b933 1px,transparent 1px);background-size:32px 32px;border-bottom:4px solid var(--ink);padding:56px 0 64px}
+.hero .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.tag{display:inline-block;background:var(--w);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px 12px;font-size:11px}
+h1{font-weight:900;font-size:clamp(44px,9vw,84px);line-height:.95;margin:28px 0 22px;color:var(--ink);text-shadow:3px 3px 0 var(--w)}
+.hero p{max-width:500px;font-weight:900;font-size:18px;line-height:1.5;text-transform:uppercase}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.big{width:200px;height:200px;background:var(--w);border:5px solid var(--ink);box-shadow:12px 12px 0 var(--ink);transform:rotate(4deg);display:grid;place-items:center;margin-right:30px}
+.big i{display:block;width:120px;height:120px;background:var(--aq);box-shadow:inset -14px -14px 0 var(--aq2),inset 14px 14px 0 #bafcfc;border:4px solid var(--ink)}
+section{padding:64px 0}
+.alt{background:var(--aqs);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.eyebrow{font-size:11px;color:var(--aq2);margin-bottom:12px}
+h2{font-weight:900;font-size:clamp(32px,6vw,48px);text-transform:uppercase;margin-bottom:28px}
+.card{background:var(--w);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:28px}
+.ip{display:inline-block;background:var(--aq);padding:8px 14px;font-size:clamp(14px,3.4vw,28px);word-break:break-all}
+.row{display:flex;align-items:center;gap:20px;margin-top:22px;flex-wrap:wrap}
+.row span{max-width:380px;line-height:1.5}
+.tg{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.tg .l{display:flex;align-items:center;gap:18px}
+.ico{width:56px;height:56px;background:var(--aq);border:3px solid var(--ink);display:grid;place-items:center;font-size:26px}
+.tg h3{font-weight:900;font-size:clamp(18px,4vw,28px);text-transform:uppercase}
+.mode{border-color:var(--aq2);box-shadow:8px 8px 0 var(--aq2)}
+.mode h3{color:var(--aq2);font-size:clamp(16px,4vw,28px);margin-bottom:20px;line-height:1.4}
+.mode p{font-weight:900;text-transform:uppercase;color:var(--aq2);margin-bottom:16px}
+.mode a{color:var(--aq2);font-weight:900;text-transform:uppercase}
+footer{background:var(--aq);border-top:4px solid var(--ink);padding:26px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+footer .px{font-size:11px}
+@media(max-width:640px){nav a.hide{display:none}.big{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo px" href="#top"><span class="cube"></span>ZEROMC</a>
+  <nav><a class="hide" href="#telegram">TELEGRAM</a><a class="hide" href="#rejimlar">REJIMLAR</a><a class="btn" href="#ip" style="padding:9px 14px">SERVER IP</a></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="tag px">MINECRAFT SERVER</span>
+    <h1>ASSALOMU<br>ALAYKUM!</h1>
+    <p>Bizning ZeroMC serverimiz web saytida turibsiz. Bu yerda siz Telegram yangiliklar, server rejimlari va server IPsini topishingiz mumkin.</p>
+    <div class="cta"><a class="btn dark" href="#ip">SERVER IPSI ↓</a><a class="btn white" href="#telegram">TELEGRAM</a><a class="btn white" href="#rejimlar">REJIMLAR</a></div>
+  </div>
+  <div class="big"><i></i></div>
+</div></div>
+
+<section id="ip"><div class="wrap">
+  <div class="eyebrow px">SERVER IPSI</div>
+  <h2>Serverimiz IPsi</h2>
+  <div class="card">
+    <span class="px" style="font-size:16px;color:var(--aq2)">IP:</span>
+    <span class="ip px" id="ipText">zeromc.gomc.uz</span>
+    <div class="row"><button class="btn dark" id="copyBtn">NUSXA OLISH</button><span>Minecraft'da <b>Multiplayer → Add Server</b> bo'limiga shu IP ni kiriting.</span></div>
+  </div>
+</div></section>
+
+<section class="alt" id="telegram"><div class="wrap">
+  <div class="eyebrow px">YANGILIKLAR</div>
+  <h2>Telegram</h2>
+  <div class="card tg">
+    <div class="l"><div class="ico">➤</div><div><h3>Telegram: @zeromc_gr</h3><div>Server yangiliklari shu kanalda</div></div></div>
+    <a class="btn dark" href="https://t.me/zeromc_gr" target="_blank" rel="noopener">KANALGA O'TISH</a>
+  </div>
+</div></section>
+
+<section id="rejimlar"><div class="wrap">
+  <div class="eyebrow px">SERVER REJIMLARI</div>
+  <h2>Rejimlar</h2>
+  <div class="card mode">
+    <h3 class="px">ANARXIYA REJIMI</h3>
+    <p>Serverda hozircha anarxiya rejimi bor</p>
+    <a href="#ip">Anarxiyaga ulanish uchun bosing ↑</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><b>© 2026 ZeroMC</b><span class="px">IP: zeromc.gomc.uz</span></div></footer>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click',function(){
+  var b=this,t=document.getElementById('ipText').textContent;
+  function ok(){b.textContent='NUSXALANDI ✓';setTimeout(function(){b.textContent='NUSXA OLISH'},1800)}
+  try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+  function fb(){var r=document.createRange();r.selectNodeContents(document.getElementById('ipText'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');ok()}catch(e){}}
+});
+</script>
+</body>
+</html>
